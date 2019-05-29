@@ -67,9 +67,10 @@
 			this.set('salary', net);		
 		};
 		//UI
-
+		//View
 		function SalaryCalculator(model){
 
+			//presentation
 			var _template = `
 				<section>
 					<div class="field">
@@ -109,7 +110,8 @@
 
 			$viewEl.html(_template);
 
-
+			//UI Behavior
+			//Reacting to user actions
 			$('#txtBasic', $viewEl).change(function(){	
 				model.set('basic', parseInt($(this).val()));
 			});
@@ -126,11 +128,11 @@
 				model.set('tax', parseInt($(this).val()));
 			});
 
-
 			$('#btnCalculate', $viewEl).click(function(){
 				model.calculate();
 			});
 
+			//Reacting to model changes
 			model.subscribe('salary', function(){
 				$('#tdSalary', $viewEl).html(model.get('salary'));
 			})
@@ -154,7 +156,7 @@
 		$(function(){
 
 			window['model'] = new SalaryCalculatorModel();
-			
+
 			var v1 = new SalaryCalculator(model)
 			var v2 = new SalaryCalculator(model)
 			
