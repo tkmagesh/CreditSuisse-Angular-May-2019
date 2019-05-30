@@ -1,9 +1,9 @@
 <h1>Calculator</h1>
-<input type="number"  (change)="v1 = $event.target.valueAsNumber" [value]="v1">
-<input type="number"  (change)="v2 = $event.target.valueAsNumber">
+<input type="number"  (change)="model.v1 = $event.target.valueAsNumber" [value]="v1">
+<input type="number"  (change)="model.v2 = $event.target.valueAsNumber">
 <br>
-<input type="button" value="Add" (click)="onAddClick()">
-<input type="button" value="Subtract" (click)="onSubtractClick()">
+<input type="button" value="Add" (click)="model.add()">
+<input type="button" value="Subtract" (click)="model.subtract()">
 <input type="button" value="Multiply">
 <input type="button" value="Divide">
-<div class="highlight">[ {{result}} ]</div>
+<div class="highlight">[ {{model.result}} ]</div>
