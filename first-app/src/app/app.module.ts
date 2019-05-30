@@ -7,12 +7,15 @@ import { CalculatorTwoComponent } from './calculator/calculatorTwo.component';
 import { CalculatorModel } from './calculator/calculatorModel';
 import { CalculatorResultComponent } from './calculator/calculatorResult.component';
 
+import { ProductsComponent } from './products/products.component';
+
 @NgModule({
   declarations: [
     AppComponent
     , CalculatorComponent
     , CalculatorTwoComponent
     , CalculatorResultComponent
+    , ProductsComponent
   ],
   imports: [
     BrowserModule
