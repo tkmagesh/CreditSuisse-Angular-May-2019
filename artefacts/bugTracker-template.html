@@ -4,19 +4,35 @@
 	<meta charset="UTF-8">
 	<title>Bug Tracker</title>
 	<script type="text/usecases">
-		1. Add new bugs
-		2. List the added bugs
-		3. Toggle the 'closed' status of any bug
-		4. Remove 'closed' bugs
+		(done) 1. Add new bugs
+		(done) 2. List the added bugs
+		(done) 3. Toggle the 'closed' status of any bug
+		(done) 4. Remove 'closed' bugs
 		5. Display statistics ( # of closed bugs / total # of bugs )
-		6. Improve bug display
+		(done) 6. Improve bug display
 		7. Sort the bugs
 		8. Persist the bugs in localStorage
 		9. Display 'createdAt' for each bug
 		10. Persist the bugs in the server
 		11. Make the bugs accessible using unique urls
 	</script>
+	<!-- 
+		Todo:
+			1. change the bug display (apply the css class "closed" for the closed bugs)
+			2. display # of closed bugs
+			3. refactor the following in to a service (BugOperations)
+				- createNew(bugName) => new bug
+				- toggle(bug)
+
+			4. refactor the 'stats section' to another component
+				bugStatsComponent
+			
+			5. implement sort (usecase 7)
+
+	 -->
 	<style>
+		<!-- src/styles.css -->
+
 		body{
 			margin-left: 50px;
 		}
@@ -56,8 +72,15 @@
 	</style>
 </head>
 <body>
+	<!-- app.component.html -->
 	<h1>Bug Tracker</h1>
 	<hr>
+	<!-- 
+		app/bugTracker
+			bugTracker.component.ts
+			bugTraker.component.html
+			selector : 'app-bug-tracker'
+	 -->
 	<section class="stats">
 		<span class="closed">1</span>
 		<span> / </span>
