@@ -5,11 +5,19 @@ export class CalculatorModel{
 	result : number = 0;
 
 	//behavior
-	add(){
+	public add(){
 		this.result = this.v1 + this.v2;
 	}
 
 	subtract(){
 		this.result = this.v1 - this.v2;
+	}
+
+	multiply(){
+		this.result = this.v1 * this.v2;
+	}
+
+	divide(){
+		this.result = this.v1 / this.v2;
 	}
 }

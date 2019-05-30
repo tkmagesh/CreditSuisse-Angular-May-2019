@@ -3,11 +3,20 @@ import { CalculatorModel } from './calculatorModel';
 
 @Component({
 	selector : 'app-calculator',
-	templateUrl : 'calculator.component.html',
-	styleUrls : ['calculator.component.css']
+	templateUrl : 'calculator.component.html'
 })
 export class CalculatorComponent{
 
-	model : CalculatorModel = new CalculatorModel();
+	//model : CalculatorModel = new CalculatorModel();
+
+	model : CalculatorModel;
+
+	constructor(_model : CalculatorModel){
+		this.model = _model;
+	}
+
+	onAddClick(){
+		this.model.add();
+	}
 
 }
