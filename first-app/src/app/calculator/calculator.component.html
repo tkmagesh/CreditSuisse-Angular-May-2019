@@ -1,0 +1,9 @@
+<h1>Calculator</h1>
+<input type="number" #txtV1>
+<input type="number" #txtV2>
+<br>
+<input type="button" value="Add" (click)="onAddClick(txtV1.value, txtV2.value)">
+<input type="button" value="Subtract">
+<input type="button" value="Multiply">
+<input type="button" value="Divide">
+<div class="highlight">[ {{result}} ]</div>
