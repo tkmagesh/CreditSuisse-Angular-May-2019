@@ -23,10 +23,7 @@ export class BugTrackerComponent implements OnInit{
 	}
 
 	ngOnInit(){
-		this.bugs.push(this.bugOperations.createNew('Server communication failure'))
-		this.bugs.push(this.bugOperations.createNew('Application not responding'))
-		this.bugs.push(this.bugOperations.createNew('User actions not recognized'))
-		this.bugs.push(this.bugOperations.createNew('Data integrity checks failed'))
+		this.bugs = this.bugOperations.getAll();
 	}
 
 	onNewBugAdded(newBug: Bug){
@@ -39,7 +36,10 @@ export class BugTrackerComponent implements OnInit{
 	}
 
 	onRemoveClosedClick(){
-		this.bugs = this.bugs.filter(bug => !bug.isClosed);
+		this.bugs
+			.filter(bug => bug.isClosed)
+			.forEach(closedBug => this.bugOperations.remove(closedBug));
+		this.bugs = this.bugOperations.getAll();
 	}
 
 	
