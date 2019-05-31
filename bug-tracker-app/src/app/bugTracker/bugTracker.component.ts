@@ -16,7 +16,7 @@ export class BugTrackerComponent implements OnInit{
 
 	sortDesc : boolean = false;
 
-	newBugName : string = '';
+	
 
 	constructor(private bugOperations : BugOperationsService){
 		
@@ -29,10 +29,8 @@ export class BugTrackerComponent implements OnInit{
 		this.bugs.push(this.bugOperations.createNew('Data integrity checks failed'))
 	}
 
-	onAddNewClick(){
-		let newBug = this.bugOperations.createNew(this.newBugName);
+	onNewBugAdded(newBug: Bug){
 		this.bugs = [...this.bugs, newBug];
-		this.newBugName = '';
 	}
 
 	onBugNameClick(bugToToggle : Bug){
