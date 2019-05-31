@@ -1,24 +1,16 @@
 {
   "bugs": [
     {
-      "id": 5,
-      "name": "unable to debug",
+      "id": 8,
+      "name": "Bugs are not toggled",
       "isClosed": false,
-      "createdAt": "2019-04-17T10:09:07.973Z"
+      "createdAt": "2019-05-31T11:35:52.508Z"
     },
     {
-      "id": 6,
-      "name": "Router is not routing",
+      "id": 9,
+      "name": "Application is not responding",
       "isClosed": false,
-      "createdAt": "2019-04-17T10:28:33.169Z",
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
-    },
-    {
-      "id": 7,
-      "name": "Socket server is not working",
-      "isClosed": false,
-      "createdAt": "2019-04-17T10:32:18.723Z",
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
+      "createdAt": "2019-05-31T11:37:35.534Z"
     }
   ],
   "projects": [
