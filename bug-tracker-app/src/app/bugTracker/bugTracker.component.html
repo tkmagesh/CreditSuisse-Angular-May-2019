@@ -1,17 +1,13 @@
-<section class="stats">
-	<span class="closed">1</span>
-	<span> / </span>
-	<span>{{bugs.length}}</span>
-</section>
+<app-bug-stats [data]="bugs"></app-bug-stats>
 <section class="sort">
 	<label for="">Order By :</label>
-	<select name="" id="">
-		<option value="-">    </option>
+	<select (change)="sortAttr = $event.target.value">
+		<option value="">    </option>
 		<option value="name">Name</option>
 		<option value="isClosed">Status</option>
 	</select>
 	<label for=""> Descending ? :</label>
-	<input type="checkbox" name="" id="">
+	<input type="checkbox" (change)="sortDesc = $event.target.checked">
 </section>
 <section class="edit">
 	<label for="">Bug Name :</label>
@@ -20,8 +16,12 @@
 </section>
 <section class="list">
 	<ol>
-		<li *ngFor="let bug of bugs">
-			<span class="bugname" (click)="onBugNameClick(bug)">
+		<li *ngFor="let bug of ( bugs | sort:sortAttr:sortDesc ) ">
+			<span 
+				class="bugname" 
+				(click)="onBugNameClick(bug)"
+				[ngClass]="{closed : bug.isClosed}"
+			>
 				{{bug.name | trimText:40}}
 			</span>
 			<div class="datetime">[created at]</div>
